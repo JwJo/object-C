@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node
+{
+    int a;
+    void(*p)(int b);
+}no;
+
+void fun(int b)
+{
+    printf("hello,%d\n",b);
+}
+
+int main()
+{
+    no a = { 1,fun };
+
+    a.p(a.a);
+    system("pause");
+    return 0;
+}
+
+这段代码运行出来，控制台会打印出hello,1.这就表面明了，我们成功的调用了函数，并且成功的传递了参数进去。
